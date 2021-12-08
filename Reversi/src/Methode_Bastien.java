@@ -8,6 +8,7 @@ import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 public class Methode_Bastien implements NativeKeyListener {
 
     public static boolean canPlay = false ;
+    public static String touche = "n"  ;
 
     public static void keyListener() {
         try {
@@ -22,8 +23,8 @@ public class Methode_Bastien implements NativeKeyListener {
 
     // Detection de la touche pressee + mouvement du joueur
     public void nativeKeyPressed(NativeKeyEvent input) {
-        String touche = NativeKeyEvent.getKeyText(input.getKeyCode());
-
+         touche = NativeKeyEvent.getKeyText(input.getKeyCode());
+        System.out.println("Key Pressed: " + NativeKeyEvent.getKeyText(input.getKeyCode()));
         if (canPlay){
             switch (touche){
 
