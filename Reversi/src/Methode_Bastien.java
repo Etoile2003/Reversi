@@ -22,5 +22,7 @@ public class Methode_Bastien implements NativeKeyListener {
         String touche = NativeKeyEvent.getKeyText(input.getKeyCode());
 
 
+
+
     }
 }
