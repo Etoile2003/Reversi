@@ -1,15 +1,26 @@
-public class Methode_Bastien {
-    public static final String RESET = "\u001B[0m";
-    public static final String BLACK = "\u001B[30m";
-    public static final String RED = "\u001B[31m";
-    public static final String GREEN = "\u001B[32m";
-    public static final String YELLOW = "\u001B[33m";
-    public static final String BLUE = "\u001B[34m";
-    public static final String PURPLE = "\u001B[35m";
-    public static final String CYAN = "\u001B[36m";
-    public static final String WHITE = "\u001B[37m";
+import com.github.kwhat.jnativehook.GlobalScreen;
+import com.github.kwhat.jnativehook.NativeHookException;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 
 
 
+public class Methode_Bastien implements NativeKeyListener {
+    public static void keyListener() {
+        try {
+            GlobalScreen.registerNativeHook();
+        }
+        catch (NativeHookException ex) {
+            System.err.println("BUG getinput");
+            System.exit(1);
+        }
+        GlobalScreen.addNativeKeyListener(new Methode_Bastien());
+    }
 
+    // Detection de la touche pressee + mouvement du joueur
+    public void nativeKeyPressed(NativeKeyEvent input) {
+        String touche = NativeKeyEvent.getKeyText(input.getKeyCode());
+
+
+    }
 }
