@@ -6,6 +6,9 @@ import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 
 
 public class Methode_Bastien implements NativeKeyListener {
+
+    public static boolean canPlay = false ;
+
     public static void keyListener() {
         try {
             GlobalScreen.registerNativeHook();
@@ -20,6 +23,36 @@ public class Methode_Bastien implements NativeKeyListener {
     // Detection de la touche pressee + mouvement du joueur
     public void nativeKeyPressed(NativeKeyEvent input) {
         String touche = NativeKeyEvent.getKeyText(input.getKeyCode());
+
+        if (canPlay){
+            switch (touche){
+
+
+                case "z" :
+
+
+
+
+                    break;
+
+                case "q":
+
+
+
+                    break;
+
+                case "s" :
+
+
+
+
+                    break;
+
+                case "d":
+                    break;
+            }
+        }
+
 
 
 
