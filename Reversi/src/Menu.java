@@ -11,6 +11,7 @@ public class Menu {
             {".",".",".",".",".",".",".","."},
             {".",".",".",".",".",".",".","."}
     };
+
     public static void lancementJeu(){
 
         Methode_Main.afficherTableau(plateau);
