@@ -25,6 +25,7 @@ public class Methode_Bastien implements NativeKeyListener {
     public void nativeKeyPressed(NativeKeyEvent input) {
          touche = NativeKeyEvent.getKeyText(input.getKeyCode());
          int[] pos = whereCursor(Menu.plateau) ;
+        System.out.println();
         System.out.println("je suis en x" + pos[0]);
         System.out.println("je suis en y" + pos[1]);
         System.out.println("Key Pressed: " + NativeKeyEvent.getKeyText(input.getKeyCode()));
@@ -32,42 +33,66 @@ public class Methode_Bastien implements NativeKeyListener {
             switch (touche){
 
 
-                case "W" :
-                    System.out.println("je suis dans z");
-                    Menu.plateau[pos[1]][pos[0]] = ".";
-                    Menu.plateau[pos[1]][pos[0]-1] = "X";
+                case "A" :
+                try {
 
+                    Menu.plateau[pos[1]][pos[0] - 1] = "X";
+                    Menu.plateau[pos[1]][pos[0]] = ".";
+                }catch (Exception e){
+
+                }
 
                     break;
 
-                case "A":
-                    System.out.println("je suis dans a");
-                    Menu.plateau[pos[1]][pos[0]] = ".";
+                case "W":
+                try{
+
                     Menu.plateau[pos[1]-1][pos[0]] = "X";
-
-
-
-                    break;
-
-                case "S" :
-                    System.out.println("je suis dans s");
-                    Menu.plateau[pos[1]] [pos[0]]= ".";
-                    Menu.plateau[pos[1]][pos[0]+1] = "X";
-
-
-
-                    break;
-
-                case "D":
-
-                    System.out.println("je suis dans d");
                     Menu.plateau[pos[1]][pos[0]] = ".";
-                    Menu.plateau[pos[1]+1][pos[0]] = "X";
+                }catch (Exception e){
+
+                }
+
+
+
 
                     break;
+
+                case "D" :
+                try {
+
+                    Menu.plateau[pos[1]][pos[0]+1] = "X";
+                    Menu.plateau[pos[1]] [pos[0]]= ".";
+                }catch (Exception e){
+
+                }
+
+
+
+
+                    break;
+
+                case "S":
+
+                    try {
+
+                        Menu.plateau[pos[1]+1][pos[0]] = "X";
+                        Menu.plateau[pos[1]][pos[0]] = ".";
+                    }catch (Exception e){
+
+                    }
+
+
+                    break;
+
+                case "Entrée" :
+                    canPlay = false  ;
+                    int[] playHere = whereCursor(Menu.plateau) ;
+                    System.out.println("i play here ");
             }
         }
         Methode_Main.afficherTableau(Menu.plateau);
+
 
 
 
