@@ -8,7 +8,7 @@ import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 public class Methode_Bastien implements NativeKeyListener {
 
     public static boolean canPlay = true ;
-    public static String touche = "n"  ;
+    public static String caseSave = "."  ;
 
     public static void keyListener() {
         try {
@@ -23,7 +23,7 @@ public class Methode_Bastien implements NativeKeyListener {
 
     // Detection de la touche pressee + mouvement du joueur
     public void nativeKeyPressed(NativeKeyEvent input) {
-         touche = NativeKeyEvent.getKeyText(input.getKeyCode());
+        String touche = NativeKeyEvent.getKeyText(input.getKeyCode());
          int[] pos = whereCursor(Menu.plateau) ;
         System.out.println();
         System.out.println("je suis en x" + pos[0]);
@@ -35,9 +35,13 @@ public class Methode_Bastien implements NativeKeyListener {
 
                 case "A" :
                 try {
+                    if (Menu.plateau[pos[1]][pos[0] - 1] != "#"){
+                        Menu.plateau[pos[1]][pos[0]] = caseSave;
+                        caseSave = Menu.plateau[pos[1]][pos[0] - 1] ;
+                        Menu.plateau[pos[1]][pos[0] - 1] = "X";
+                    }
 
-                    Menu.plateau[pos[1]][pos[0] - 1] = "X";
-                    Menu.plateau[pos[1]][pos[0]] = ".";
+
                 }catch (Exception e){
 
                 }
@@ -46,9 +50,13 @@ public class Methode_Bastien implements NativeKeyListener {
 
                 case "W":
                 try{
+                    if (Menu.plateau[pos[1]-1][pos[0]] != "#"){
+                        Menu.plateau[pos[1]][pos[0]] = caseSave;
+                        caseSave =Menu.plateau[pos[1]-1][pos[0]] ;
+                        Menu.plateau[pos[1]-1][pos[0]] = "X";
+                    }
 
-                    Menu.plateau[pos[1]-1][pos[0]] = "X";
-                    Menu.plateau[pos[1]][pos[0]] = ".";
+
                 }catch (Exception e){
 
                 }
@@ -60,9 +68,13 @@ public class Methode_Bastien implements NativeKeyListener {
 
                 case "D" :
                 try {
+                    if (Menu.plateau[pos[1]][pos[0]+1]  != "#"){
+                        Menu.plateau[pos[1]] [pos[0]]= caseSave;
+                        caseSave = Menu.plateau[pos[1]][pos[0]+1] ;
+                        Menu.plateau[pos[1]][pos[0]+1] = "X";
+                    }
 
-                    Menu.plateau[pos[1]][pos[0]+1] = "X";
-                    Menu.plateau[pos[1]] [pos[0]]= ".";
+
                 }catch (Exception e){
 
                 }
@@ -76,8 +88,14 @@ public class Methode_Bastien implements NativeKeyListener {
 
                     try {
 
-                        Menu.plateau[pos[1]+1][pos[0]] = "X";
-                        Menu.plateau[pos[1]][pos[0]] = ".";
+                        if (Menu.plateau[pos[1]+1][pos[0]] != "#"){
+                            Menu.plateau[pos[1]][pos[0]] = caseSave;
+                            caseSave = Menu.plateau[pos[1]+1][pos[0]] ;
+                            Menu.plateau[pos[1]+1][pos[0]] = "X";
+
+                        }
+
+
                     }catch (Exception e){
 
                     }
@@ -86,9 +104,15 @@ public class Methode_Bastien implements NativeKeyListener {
                     break;
 
                 case "Entrée" :
-                    canPlay = false  ;
-                    int[] playHere = whereCursor(Menu.plateau) ;
-                    System.out.println("i play here ");
+                    if (caseSave.equals(".")){
+                        canPlay = false  ;
+                        int[] playHere = whereCursor(Menu.plateau) ;
+                        System.out.println("i play here ");
+                    }
+                    else {
+                        System.out.println("tu ne peux pas jouer ici :/");
+                    }
+
             }
         }
         Methode_Main.afficherTableau(Menu.plateau);

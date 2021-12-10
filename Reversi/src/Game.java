@@ -7,9 +7,7 @@ public class Game {
 
         while (playGame){
 
-            do{
 
-            }while ( Methode_Bastien.touche.equals("n")) ;
 
 
         }
