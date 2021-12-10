@@ -1,4 +1,123 @@
-import com.github.kwhat.jnativehook.GlobalScreen;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import com.github.kwhat.jnativehook.GlobalScreen;
 import com.github.kwhat.jnativehook.NativeHookException;
 import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
@@ -9,6 +128,7 @@ public class Methode_Bastien implements NativeKeyListener {
 
     public static boolean canPlay = true ;
     public static String caseSave = "."  ;
+    public static String touche = " "  ;
 
     public static void keyListener() {
         try {
@@ -29,6 +149,7 @@ public class Methode_Bastien implements NativeKeyListener {
         System.out.println("je suis en x" + pos[0]);
         System.out.println("je suis en y" + pos[1]);
         System.out.println("Key Pressed: " + NativeKeyEvent.getKeyText(input.getKeyCode()));
+
         if (canPlay){
             switch (touche){
 
@@ -106,8 +227,11 @@ public class Methode_Bastien implements NativeKeyListener {
                 case "Entrée" :
                     if (caseSave.equals(".")){
                         canPlay = false  ;
-                        int[] playHere = whereCursor(Menu.plateau) ;
+
                         System.out.println("i play here ");
+
+
+                        canPlay = true ;
                     }
                     else {
                         System.out.println("tu ne peux pas jouer ici :/");
@@ -138,4 +262,8 @@ public class Methode_Bastien implements NativeKeyListener {
         }
         return result ;
         }
+
+
+
 }
+*/
