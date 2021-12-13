@@ -5,7 +5,7 @@ public class Game {
     public static int turn = 0 ;
     public static void myGame(){
         Scanner sc = new Scanner(System.in) ;
-
+        Methode_Main.listDesCoJouables(Menu.plateau,1);
         while (playGame){
             int x =0 ;
             int y = 0 ;
@@ -43,7 +43,7 @@ public class Game {
 
 
 
-        Methode_Main.listDesCoJouables(Menu.plateau,1);
+
 
 
 
