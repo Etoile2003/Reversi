@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Methode_Bastien {
 
-    public static void placerJeton(ArrayList<Integer> Listco , int x ,  int y , String jeton){
+    public static void placerJeton(List<Integer> Listco , int x , int y , String jeton){
 
         int poid =  Listco.size() ;
         boolean canPlace = false ;
@@ -16,6 +17,10 @@ public class Methode_Bastien {
         if (canPlace){
             System.out.println("jeton placé");
             Menu.plateau[x][y] = jeton ;
+            Game.rejouer = false ;
+        }
+        else {
+            System.out.println("imposibled de jouer ici ");
         }
 
     }
