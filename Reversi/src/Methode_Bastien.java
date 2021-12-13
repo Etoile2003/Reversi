@@ -1,11 +1,31 @@
+import java.util.ArrayList;
+
+public class Methode_Bastien {
+
+    public static void placerJeton(ArrayList<Integer> Listco , int x ,  int y , String jeton){
+
+        int poid =  Listco.size() ;
+        boolean canPlace = false ;
+
+        for (int i = 0; i < poid; i = i + 3) {
+
+            if (x == Listco.get(i) && y == Listco.get(i+1)){
+                canPlace = true ;
+            }
+        }
+        if (canPlace){
+            System.out.println("jeton placé");
+            Menu.plateau[x][y] = jeton ;
+        }
+
+    }
 
 
 
 
 
 
-
-
+}
 
 
 

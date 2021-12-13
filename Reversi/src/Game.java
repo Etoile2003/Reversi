@@ -22,9 +22,9 @@ public class Game {
                 }
 
             }while (x <1 || x > 8 || y < 1 || y > 8 ) ;
+            Methode_Bastien.placerJeton(Methode_Main.listDesCoJouables(Menu.plateau , 1) , x , y ,"⬡");
             //coordoner dans un int
-            y = -1 ;
-            x = - 1 ;
+
             do{
                 System.out.println("c'est au blanc de jouer ");
                 try {
@@ -37,6 +37,7 @@ public class Game {
                 }
 
             }while (x <1 || x > 8 || y < 1 || y > 8 ) ;
+            Methode_Bastien.placerJeton(Methode_Main.listDesCoJouables(Menu.plateau , 2) , x , y ,"⬢");
         }
 
 
