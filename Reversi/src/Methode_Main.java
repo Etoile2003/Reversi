@@ -52,13 +52,50 @@ public class Methode_Main {
 
                     }
 
-                }
+                } else {
+                    if (tab[i][j].equals("⬢")) {
+                        int compteur;
+                        int[] cojouable = new int[3];
+                        System.out.println("blanc");
 
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, -1, -1, compteur, "⬡", cojouable, myArrayList);
+
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, -1, 1, compteur, "⬡", cojouable, myArrayList);
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 1, -1, compteur, "⬡", cojouable, myArrayList);
+
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 1, 1, compteur, "⬡", cojouable, myArrayList);
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 0, -1, compteur, "⬡", cojouable, myArrayList);
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 0, 1, compteur, "⬡", cojouable, myArrayList);
+
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, -1, 0, compteur, "⬡", cojouable, myArrayList);
+
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 1, 0, compteur, "⬡", cojouable, myArrayList);
+
+                    }
+                }
 
             }
         }
-
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.println(myArrayList.get(i));
+        }
         return myArrayList;
+
     }
 
     public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, int[] coPositionJouable, ArrayList listCo) {
@@ -74,11 +111,13 @@ public class Methode_Main {
                 coPositionJouable[0] = newPosX;
                 coPositionJouable[1] = newposY;
                 coPositionJouable[2] = compteur;
+                System.out.println("ajout");
+                ajoutCoDansListe(coPositionJouable, listCo);
             }
         } catch (Exception e) {
 
         }
-        ajoutCoDansListe(coPositionJouable, listCo);
+
     }
 
     public static void ajoutCoDansListe(int[] tabCo, ArrayList listCo) {
