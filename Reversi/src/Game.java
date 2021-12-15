@@ -34,6 +34,7 @@ public class Game {
 
             rejouer = true ;
             //coordoner dans un int
+
             Methode_Main.afficherTableau(Menu.plateau);
             do {
                 x = 0 ;
@@ -53,6 +54,7 @@ public class Game {
                 }while (x <1 || x > 8 || y < 1 || y > 8 ) ;
                 Methode_Bastien.placerJeton(Methode_Main.listDesCoJouables(Menu.plateau , 2) , x , y ,"⬢");
             }while (rejouer) ;
+
 
 
         }
