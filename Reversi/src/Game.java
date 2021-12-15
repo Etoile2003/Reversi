@@ -17,7 +17,7 @@ public class Game {
 
                     do {
                         System.out.println("c'est au noir de jouer ");
-                        Methode_Main.afficherTableau(Menu.plateau);
+                        Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouables(Menu.plateau, 1));
                         try {
                             x = Integer.parseInt(sc.nextLine());
                             y = Integer.parseInt(sc.nextLine());
@@ -35,13 +35,13 @@ public class Game {
             rejouer = true ;
             //coordoner dans un int
 
-            Methode_Main.afficherTableau(Menu.plateau);
+            Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouables(Menu.plateau, 2));
             do {
                 x = 0 ;
                 y = 0 ;
                 do{
                     System.out.println("c'est au blanc de jouer ");
-                    Methode_Main.afficherTableau(Menu.plateau);
+                    Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouables(Menu.plateau, 2));
                     try {
                         x = Integer.parseInt(sc.nextLine()) ;
                         y = Integer.parseInt(sc.nextLine() );
