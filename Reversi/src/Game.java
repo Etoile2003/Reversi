@@ -27,6 +27,7 @@ public class Game {
             x = - 1 ;
             do{
                 System.out.println("c'est au blanc de jouer ");
+                Methode_Main.afficherTableau(Menu.plateau);
                 try {
                     x = Integer.parseInt(sc.nextLine()) ;
                     y = Integer.parseInt(sc.nextLine() );
