@@ -2,11 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Methode_Main {
-    public static void afficherTableau(String[][] tab) {
+    public static void afficherTableau(String[][] tab,List<Integer>listCo) {
         for (int i = 0; i < tab.length; i++) {
             System.out.print(i + 1);
-            for (int j = 0; j < tab[1].length; j++) {
-                System.out.print(tab[i][j] + "\t");
+            for (int j = 0; j < tab[0].length; j++) {
+                boolean find = false  ;
+                for (int k = 0; k <listCo.size() ; k+=3) {
+                    if (listCo.get(k)==i&&listCo.get(k+1)==j && !find){
+                        System.out.print("\u001B[31m"+tab[i][j]+"\u001B[0m"+"\t");
+                        find = true ;
+                    }
+
+                }
+                if (!find){
+                    System.out.print(tab[i][j]+"\t");
+                }
             }
             System.out.println();
         }
