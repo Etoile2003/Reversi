@@ -6,18 +6,19 @@ public class Game {
     public static void myGame(){
         Scanner sc = new Scanner(System.in) ;
         Methode_Main.listDesCoJouables(Menu.plateau,1);
+        System.out.println("Il faut saisire l'axe verticale puis l'axe horizontal ");
         while (playGame){
             int x = 0;
             int y = 0;
             rejouer = true ;
-            if ( Methode_Main.listDesCoJouables(Menu.plateau, 1).size() != 0 ){
+            if ( Methode_Main.listDesCoJouables(Menu.plateau, 1)[1].size() != 0 ){
                 do {
                     x = 0 ;
                     y = 0 ;
 
                     do {
                         System.out.println("c'est au noir de jouer ");
-                        Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouables(Menu.plateau, 1));
+                        Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouables(Menu.plateau, 1)[1]);
                         try {
                             x = Integer.parseInt(sc.nextLine());
                             y = Integer.parseInt(sc.nextLine());
@@ -28,6 +29,8 @@ public class Game {
                         }
 
                     } while (x < 1 || x > 8 || y < 1 || y > 8);
+                    x-- ;
+                    y-- ;
                     Methode_Bastien.placerJeton(Methode_Main.listDesCoJouables(Menu.plateau, 1), x, y, "⬡");
                 }while (rejouer) ;
             }
@@ -35,13 +38,13 @@ public class Game {
             rejouer = true ;
             //coordoner dans un int
 
-            Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouables(Menu.plateau, 2));
+
             do {
                 x = 0 ;
                 y = 0 ;
                 do{
                     System.out.println("c'est au blanc de jouer ");
-                    Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouables(Menu.plateau, 2));
+                    Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouables(Menu.plateau, 2)[1]);
                     try {
                         x = Integer.parseInt(sc.nextLine()) ;
                         y = Integer.parseInt(sc.nextLine() );
@@ -52,6 +55,8 @@ public class Game {
                     }
 
                 }while (x <1 || x > 8 || y < 1 || y > 8 ) ;
+                x-- ;
+                y-- ;
                 Methode_Bastien.placerJeton(Methode_Main.listDesCoJouables(Menu.plateau , 2) , x , y ,"⬢");
             }while (rejouer) ;
 

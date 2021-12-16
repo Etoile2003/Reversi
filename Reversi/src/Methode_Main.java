@@ -9,7 +9,7 @@ public class Methode_Main {
                 boolean find = false  ;
                 for (int k = 0; k <listCo.size() ; k+=3) {
                     if (listCo.get(k)==i&&listCo.get(k+1)==j && !find){
-                        System.out.print("\u001B[31m"+tab[i][j]+"\u001B[0m"+"\t");
+                        System.out.print("\u001B[31m"+"X"+"\u001B[0m"+"\t");
                         find = true ;
                     }
 
@@ -68,7 +68,7 @@ public class Methode_Main {
                     if (tab[i][j].equals("⬢")) {
                         int compteur;
                         int[] cojouable = new int[3];
-                        System.out.println("blanc");
+
 
                         compteur = 0;
                         verifjouable(Menu.plateau, i, j, -1, -1, compteur, "⬡", cojouable, myArrayList,listEmplacementDepart);
@@ -104,7 +104,7 @@ public class Methode_Main {
             }
         }
         for (int i = 0; i < myArrayList.size(); i++) {
-            System.out.println(myArrayList.get(i));
+          //  System.out.println(myArrayList.get(i));
         }
         coJoubleEtOriginal[0]=listEmplacementDepart;
         coJoubleEtOriginal[1]=myArrayList;
@@ -128,7 +128,7 @@ public class Methode_Main {
                 coPositionJouable[0] = newPosX;
                 coPositionJouable[1] = newposY;
                 coPositionJouable[2] = compteur;
-                System.out.println("ajout");
+                //System.out.println("ajout");
                 ajoutCoDansListe(coPositionJouable, listCo);
             }
         } catch (Exception e) {
