@@ -23,7 +23,7 @@ public class Game {
                             x = Integer.parseInt(sc.nextLine());
                             y = Integer.parseInt(sc.nextLine());
                         } catch (Exception E) {
-                            System.out.println("il faut ecrire des coordoner ");
+                            System.out.println("il faut ecrire des coordonner ");
                             x = -1;
                             y = -1;
                         }

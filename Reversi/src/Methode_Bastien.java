@@ -9,7 +9,7 @@ public class Methode_Bastien {
         boolean canPlace = false ;
         List<Integer> listco1 = Listco[1] ;
 
-        for (int i = 0; i < poid; i = i + 3) {
+        for (int i = 0; i < poid; i = i + 2) {
 
             if (x == listco1.get(i) && y == listco1.get(i+1)){
                 canPlace = true ;
@@ -19,7 +19,7 @@ public class Methode_Bastien {
             System.out.println("jeton placé");
             Menu.plateau[x][y] = jeton ;
             Game.rejouer = false ;
-            retournerjeton(Listco[0] , Listco[1] , x , y , jeton);
+            retournerjeton(Listco[0] , Listco[1] ,Listco[2],  x , y , jeton);
         }
         else {
             System.out.println("impossible jouer ici ");
@@ -30,12 +30,17 @@ public class Methode_Bastien {
 
 
 
-    public static void retournerjeton(List<Integer> coDepart , List<Integer> coArrive , int x , int y ,  String jeton ){
+    public static void retournerjeton(List<Integer> coDepart , List<Integer> coArrive ,  List<Integer> nbrJeton ,int x , int y ,  String jeton ){
 
         //faire une troisieme list qui conyien seulement le nombre de jeton retourné
         System.out.println("max "+coArrive.size());
         System.out.println("maxdepart "+coDepart.size());
-        for (int i = 0; coArrive.size() > i; i = i + 3) {
+
+        for (int val:coDepart
+             ) {
+            System.out.println(val);
+        }
+        for (int i = 0; coArrive.size() > i; i = i + 2) {
 
             if (coArrive.get(i) == x && coArrive.get(i+1) == y){
 
@@ -66,11 +71,10 @@ public class Methode_Bastien {
                     incrementY = -1 ;
                 else
                     incrementY = 0 ;
-                for (int j = 0; j < coArrive.get(i+2); j++) {
+                for (int j = 0; j < nbrJeton.get(i); j++) {
 
 
-                    System.out.println("x "+ (xDebut + incrementX) );
-                    System.out.println("y "+ (yDebut+incrementY));
+
                     Menu.plateau[xDebut + incrementX][yDebut+incrementY] = jeton ;
 
 
@@ -95,7 +99,7 @@ public class Methode_Bastien {
 
                 }
 
-                break;
+
             }
 
 
