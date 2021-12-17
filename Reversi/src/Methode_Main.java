@@ -2,20 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Methode_Main {
-    public static void afficherTableau(String[][] tab,List<Integer>listCo) {
+    public static void afficherTableau(String[][] tab, List<Integer> listCo) {
         for (int i = 0; i < tab.length; i++) {
             System.out.print(i + 1);
             for (int j = 0; j < tab[0].length; j++) {
-                boolean find = false  ;
-                for (int k = 0; k <listCo.size() ; k+=2) {
-                    if (listCo.get(k)==i&&listCo.get(k+1)==j && !find){
-                        System.out.print("\u001B[31m"+"X"+"\u001B[0m"+"\t");
-                        find = true ;
+                boolean find = false;
+                for (int k = 0; k < listCo.size(); k += 2) {
+                    if (listCo.get(k) == i && listCo.get(k + 1) == j && !find) {
+                        System.out.print("\u001B[31m" + "X" + "\u001B[0m" + "\t");
+                        find = true;
                     }
 
                 }
-                if (!find){
-                    System.out.print(tab[i][j]+"\t");
+                if (!find) {
+                    System.out.print(tab[i][j] + "\t");
                 }
             }
             System.out.println();
@@ -27,7 +27,7 @@ public class Methode_Main {
         ArrayList<Integer> myArrayList = new ArrayList<Integer>();
         ArrayList<Integer> listEmplacementDepart = new ArrayList<Integer>();
         ArrayList<Integer> nombreJetonsRetourner = new ArrayList<Integer>();
-        List[]coJoubleEtOriginal = new List[3];
+        List[] coJoubleEtOriginal = new List[3];
         for (int i = 0; i < tab.length; i++) {
             for (int j = 0; j < tab[1].length; j++) {
                 if (joueur == 1) {
@@ -36,32 +36,32 @@ public class Methode_Main {
                         int[] cojouable = new int[2];
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, -1, -1, compteur, "⬢", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, -1, -1, compteur, "⬢", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, -1, 1, compteur, "⬢", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, -1, 1, compteur, "⬢", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 1, -1, compteur, "⬢", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
-
-
-                        compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 1, 1, compteur, "⬢", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
-
-                        compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 0, -1, compteur, "⬢", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
-
-                        compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 0, 1, compteur, "⬢", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, 1, -1, compteur, "⬢", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, -1, 0, compteur, "⬢", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, 1, 1, compteur, "⬢", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 0, -1, compteur, "⬢", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 0, 1, compteur, "⬢", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 1, 0, compteur, "⬢", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, -1, 0, compteur, "⬢", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
+
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 1, 0, compteur, "⬢", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
                     }
 
@@ -72,32 +72,32 @@ public class Methode_Main {
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, -1, -1, compteur, "⬡", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, -1, -1, compteur, "⬡", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, -1, 1, compteur, "⬡", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, -1, 1, compteur, "⬡", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 1, -1, compteur, "⬡", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
-
-
-                        compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 1, 1, compteur, "⬡", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
-
-                        compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 0, -1, compteur, "⬡", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
-
-                        compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 0, 1, compteur, "⬡", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, 1, -1, compteur, "⬡", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, -1, 0, compteur, "⬡", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, 1, 1, compteur, "⬡", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 0, -1, compteur, "⬡", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 0, 1, compteur, "⬡", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 1, 0, compteur, "⬡", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
+                        verifjouable(Menu.plateau, i, j, -1, 0, compteur, "⬡", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
+
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, i, j, 1, 0, compteur, "⬡", cojouable, myArrayList, listEmplacementDepart, nombreJetonsRetourner, -1, -1);
 
                     }
                 }
@@ -105,32 +105,34 @@ public class Methode_Main {
             }
         }
         for (int i = 0; i < myArrayList.size(); i++) {
-             System.out.println(myArrayList.get(i));
+            System.out.println(myArrayList.get(i));
         }
         System.out.println("depart");
         for (int i = 0; i < listEmplacementDepart.size(); i++) {
             System.out.println(listEmplacementDepart.get(i));
         }
 
-        coJoubleEtOriginal[0]=listEmplacementDepart;
-        coJoubleEtOriginal[1]=myArrayList;
-        coJoubleEtOriginal[2]=nombreJetonsRetourner;
+        coJoubleEtOriginal[0] = listEmplacementDepart;
+        coJoubleEtOriginal[1] = myArrayList;
+        coJoubleEtOriginal[2] = nombreJetonsRetourner;
         return coJoubleEtOriginal;
 
     }
 
-    public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, int[] coPositionJouable, ArrayList listCo,ArrayList listCoDepart, ArrayList nombreJeton) {
+    public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, int[] coPositionJouable, ArrayList listCo, ArrayList listCoDepart, ArrayList nombreJeton, int savePointX, int savePointY) {
         coPositionJouable[0] = -1;
         coPositionJouable[1] = -1;
 
         try {
             int newPosX = pionsX + modx, newposY = pionsY + mody;
             if (tab[newPosX][newposY].equals(pion)) {
-                if (compteur==0)
-                    listCoDepart.add(pionsX);
-                listCoDepart.add(pionsY);
+                if (compteur == 0) {
+                    savePointX = pionsX;
+                    savePointY = pionsY;
+                }
+
                 compteur++;
-                verifjouable(tab, newPosX, newposY, modx, mody, compteur, pion, coPositionJouable, listCo,listCoDepart,nombreJeton);
+                verifjouable(tab, newPosX, newposY, modx, mody, compteur, pion, coPositionJouable, listCo, listCoDepart, nombreJeton, savePointX, savePointY);
             } else if (tab[newPosX][newposY].equals(".") && compteur >= 1) {
                 coPositionJouable[0] = newPosX;
                 coPositionJouable[1] = newposY;
@@ -138,6 +140,8 @@ public class Methode_Main {
                 ajoutCoDansListe(coPositionJouable, listCo);
                 nombreJeton.add(compteur);
                 nombreJeton.add(compteur);
+                listCo.add(pionsX);
+                listCo.add(pionsY);
             }
         } catch (Exception e) {
 
