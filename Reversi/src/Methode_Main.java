@@ -118,13 +118,14 @@ public class Methode_Main {
     public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, int[] coPositionJouable, ArrayList listCo,ArrayList listCoDepart, ArrayList nombreJeton) {
         coPositionJouable[0] = -1;
         coPositionJouable[1] = -1;
+        int savePionsX=pionsX, savePionsY=pionsY;
+
 
         try {
             int newPosX = pionsX + modx, newposY = pionsY + mody;
             if (tab[newPosX][newposY].equals(pion)) {
-                if (compteur==0)
-                    listCoDepart.add(pionsX);
-                    listCoDepart.add(pionsY);
+
+
                 compteur++;
                 verifjouable(tab, newPosX, newposY, modx, mody, compteur, pion, coPositionJouable, listCo,listCoDepart,nombreJeton);
             } else if (tab[newPosX][newposY].equals(".") && compteur >= 1) {
@@ -134,6 +135,9 @@ public class Methode_Main {
                 ajoutCoDansListe(coPositionJouable, listCo);
                 nombreJeton.add(compteur);
                 nombreJeton.add(compteur);
+                listCo.add(savePionsX);
+                listCo.add(savePionsY);
+
             }
         } catch (Exception e) {
 
