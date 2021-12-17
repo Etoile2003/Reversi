@@ -7,7 +7,7 @@ public class Methode_Main {
             System.out.print(i + 1);
             for (int j = 0; j < tab[0].length; j++) {
                 boolean find = false  ;
-                for (int k = 0; k <listCo.size() ; k+=2) {
+                for (int k = 0; k <listCo.size() ; k+=3) {
                     if (listCo.get(k)==i&&listCo.get(k+1)==j && !find){
                         System.out.print("\u001B[31m"+"X"+"\u001B[0m"+"\t");
                         find = true ;
@@ -33,7 +33,7 @@ public class Methode_Main {
                 if (joueur == 1) {
                     if (tab[i][j].equals("⬡")) {
                         int compteur;
-                        int[] cojouable = new int[2];
+                        int[] cojouable = new int[3];
 
                         compteur = 0;
                         verifjouable(Menu.plateau, i, j, -1, -1, compteur, "⬢", cojouable, myArrayList,listEmplacementDepart,nombreJetonsRetourner);
@@ -68,7 +68,7 @@ public class Methode_Main {
                 } else {
                     if (tab[i][j].equals("⬢")) {
                         int compteur;
-                        int[] cojouable = new int[2];
+                        int[] cojouable = new int[3];
 
 
                         compteur = 0;
@@ -118,13 +118,13 @@ public class Methode_Main {
     public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, int[] coPositionJouable, ArrayList listCo,ArrayList listCoDepart, ArrayList nombreJeton) {
         coPositionJouable[0] = -1;
         coPositionJouable[1] = -1;
-        int savePionsX=pionsX, savePionsY=pionsY;
-
-
+        int savePionsX,savePionsY;
         try {
             int newPosX = pionsX + modx, newposY = pionsY + mody;
             if (tab[newPosX][newposY].equals(pion)) {
-
+                if (compteur==0)
+                    savePionsX =pionsX;
+                    savePionsY =pionsY;
 
                 compteur++;
                 verifjouable(tab, newPosX, newposY, modx, mody, compteur, pion, coPositionJouable, listCo,listCoDepart,nombreJeton);
@@ -135,9 +135,8 @@ public class Methode_Main {
                 ajoutCoDansListe(coPositionJouable, listCo);
                 nombreJeton.add(compteur);
                 nombreJeton.add(compteur);
-                listCo.add(savePionsX);
-                listCo.add(savePionsY);
-
+                listCoDepart.add(pionsX);
+                listCoDepart.add(pionsY);
             }
         } catch (Exception e) {
 
