@@ -140,8 +140,8 @@ public class Methode_Main {
                 ajoutCoDansListe(coPositionJouable, listCo);
                 nombreJeton.add(compteur);
                 nombreJeton.add(compteur);
-                listCo.add(pionsX);
-                listCo.add(pionsY);
+                listCoDepart.add(pionsX);
+                listCoDepart.add(pionsY);
             }
         } catch (Exception e) {
 
