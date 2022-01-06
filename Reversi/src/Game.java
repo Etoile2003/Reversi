@@ -14,7 +14,7 @@ public class Game {
             int y = 0;
 
             rejouer = true ;
-            if ( Methode_Main.listDesCoJouablesFct(Menu.plateau, 1)[1].size() != 0 ){
+            if ( Methode_Main.listDesCoJouablesFct(Menu.plateau, 1).size() != 0 ){
 
            
                 do {
@@ -24,7 +24,7 @@ public class Game {
                     do {
                         System.out.println("c'est au noir de jouer ");
 
-                        Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouablesFct(Menu.plateau, 1)[1]);
+                        Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouablesFct(Menu.plateau, 1));
 
                         try {
                             x = Integer.parseInt(sc.nextLine());
@@ -54,7 +54,7 @@ public class Game {
                 do {
                     System.out.println("c'est au blanc de jouer ");
 
-                    Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouablesFct(Menu.plateau, 2)[1]);
+                    Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouablesFct(Menu.plateau, 2));
 
                     try {
                         x = Integer.parseInt(sc.nextLine());

@@ -2,15 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Methode_Main {
-    public static void afficherTableau(String[][] tab, List<Integer> listCo) {
+    public static void afficherTableau(String[][] tab, List<ArrayList> listCo) {
         for (int i = 0; i < tab.length; i++) {
             System.out.print(i + 1);
             for (int j = 0; j < tab[0].length; j++) {
                 boolean find = false;
-
-                for (int k = 0; k < listCo.size(); k += 2) {
-
-                    if (listCo.get(k) == i && listCo.get(k + 1) == j && !find) {
+                for (int k = 0; k < listCo.size(); k ++) {
+                    ArrayList<Integer> cojouable = listCo.get(k) ;
+                    if (cojouable.get(0) == i && cojouable.get(1) == j && !find) {
                         System.out.print("\u001B[31m" + "X" + "\u001B[0m" + "\t");
                         find = true;
                     }
@@ -121,13 +120,13 @@ public class Methode_Main {
 
 
 
-    public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, ArrayList listCo, ArrayList listeDetailleCo, int CoDepX, int CodepY) {
+    public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, ArrayList<ArrayList> listCo, ArrayList<Integer> listeDetailleCo, int CoDepX, int CodepY) {
 
         try {
             int newPosX = pionsX + modx, newposY = pionsY + mody;
             if (tab[newPosX][newposY].equals(pion)) {
                 if (compteur == 0) {
-
+                    //refaire la liste d'integer ici
                     CoDepX = pionsX;
                     CodepY = pionsY;
                 }
