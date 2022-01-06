@@ -66,7 +66,6 @@ public class Methode_Main {
                 } else {
                     if (tab[i][j].equals("⬢")) {
                         int compteur;
-                        int[] cojouable = new int[3];
 
 
                         compteur = 0;
@@ -136,14 +135,6 @@ public class Methode_Main {
 
         }
 
-    }
-
-    public static void ajoutCoDansListe(int[] tabCo, ArrayList listCo) {
-        if (tabCo[0] != -1) {
-            for (int i = 0; i < tabCo.length; i++) {
-                listCo.add(tabCo[i]);
-            }
-        }
     }
 }
 
