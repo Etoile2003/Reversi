@@ -45,7 +45,7 @@ public class Methode_Main {
         int CoDepX = -1, CoDepY = -1;
 
         for (int i = 0; i < tab.length; i++) {
-            for (int j = 0; j < tab[1].length; j++) {
+            for (int j = 0; j < tab.length; j++) {
                 if (joueur == 1) {
                     if (tab[i][j].equals("⬡")) {
                         int compteur;
@@ -53,32 +53,32 @@ public class Methode_Main {
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, -1, -1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
+                        verifjouable(Menu.plateau, j, i, -1, -1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, -1, 1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
+                        verifjouable(Menu.plateau, j, i, -1, 1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 1, -1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
-
-
-                        compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 1, 1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
-
-                        compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 0, -1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
-
-                        compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 0, 1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
+                        verifjouable(Menu.plateau, j, i, 1, -1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, -1, 0, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
+                        verifjouable(Menu.plateau, j, i, 1, 1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, j, i, 0, -1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, j, i, 0, 1, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
 
 
                         compteur = 0;
-                        verifjouable(Menu.plateau, i, j, 1, 0, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
+                        verifjouable(Menu.plateau, j, i, -1, 0, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
+
+
+                        compteur = 0;
+                        verifjouable(Menu.plateau, j, i, 1, 0, compteur, "⬢", ListeCoJouable, InfoCo, CoDepX, CoDepY);
 
                     }
 
@@ -134,7 +134,7 @@ public class Methode_Main {
 
 
 
-    public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, ArrayList listCo, ArrayList listeDetailleCo, int CoDepX, int CodepY) {
+    public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, ArrayList listCo, ArrayList<Integer> listeDetailleCo, int CoDepX, int CodepY) {
 
         try {
             int newPosX = pionsX + modx, newposY = pionsY + mody;
@@ -148,6 +148,8 @@ public class Methode_Main {
                 verifjouable(tab, newPosX, newposY, modx, mody, compteur, pion, listCo, listeDetailleCo, CoDepX, CodepY);
             }
             if (tab[newPosX][newposY].equals(".") && compteur >= 1) {
+                System.out.println("pionX "+pionsX);
+                System.out.println("pionY "+pionsY);
                 listeDetailleCo.add(pionsX);
                 listeDetailleCo.add(pionsY);
                 listeDetailleCo.add(CoDepX);
