@@ -2,15 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Methode_Main {
-    public static void afficherTableau(String[][] tab, List<Integer> listCo) {
+    public static void afficherTableau(String[][] tab, List<ArrayList> listCo) {
         for (int i = 0; i < tab.length; i++) {
             System.out.print(i + 1);
             for (int j = 0; j < tab[0].length; j++) {
                 boolean find = false;
-
-                for (int k = 0; k < listCo.size(); k += 2) {
-
-                    if (listCo.get(k) == i && listCo.get(k + 1) == j && !find) {
+                for (int k = 0; k < listCo.size(); k ++) {
+                    ArrayList<Integer> cojouable = listCo.get(k) ;
+                     if(cojouable.get(0) == i && cojouable.get(1) == j && !find) {
                         System.out.print("\u001B[31m" + "X" + "\u001B[0m" + "\t");
                         find = true;
                     }
@@ -23,6 +22,20 @@ public class Methode_Main {
             System.out.println();
         }
         System.out.println(" 1  2   3   4   5   6   7   8");
+        for (int k = 0; k < listCo.size(); k ++) {
+            System.out.println(listCo.size());
+            ArrayList<Integer> cojouable = listCo.get(k);
+            System.out.println("X "+cojouable.get(0));
+            System.out.println("Y "+cojouable.get(1));
+            System.out.println("Departx "+cojouable.get(2));
+            System.out.println("Departy "+cojouable.get(3));
+            System.out.println("nbrjeton "+cojouable.get(4));
+            System.out.println("------------------------------------");
+
+
+        }
+
+
     }
 
 
