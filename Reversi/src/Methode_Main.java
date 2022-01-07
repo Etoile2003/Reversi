@@ -9,7 +9,9 @@ public class Methode_Main {
                 boolean find = false;
                 for (int k = 0; k < listCo.size(); k ++) {
                     ArrayList<Integer> cojouable = listCo.get(k) ;
+
                     if (cojouable.get(0) == j && cojouable.get(1) == i && !find) {
+
                         System.out.print("\u001B[31m" + "X" + "\u001B[0m" + "\t");
                         find = true;
                     }
@@ -34,6 +36,8 @@ public class Methode_Main {
 
 
         }
+
+
     }
 
 
@@ -43,7 +47,7 @@ public class Methode_Main {
         int CoDepX = -1, CoDepY = -1;
 
         for (int i = 0; i < tab.length; i++) {
-            for (int j = 0; j < tab[1].length; j++) {
+            for (int j = 0; j < tab.length; j++) {
                 if (joueur == 1) {
                     if (tab[i][j].equals("⬡")) {
                         System.out.println("pions trouver en "+j+" "+i);
@@ -52,6 +56,7 @@ public class Methode_Main {
 
 
                         compteur = 0;
+
                         verifjouable(Menu.plateau, i,j, -1, -1, compteur, "⬢", ListeCoJouable, CoDepX, CoDepY);
 
 
@@ -78,6 +83,7 @@ public class Methode_Main {
 
                         compteur = 0;
                         verifjouable(Menu.plateau, i,j, 0, 1, compteur, "⬢", ListeCoJouable, CoDepX, CoDepY);
+
 
                     }
 
@@ -133,7 +139,9 @@ public class Methode_Main {
 
 
 
+
     public static void verifjouable(String[][] tab, int pionsX, int pionsY, int modx, int mody, int compteur, String pion, ArrayList<ArrayList> listCo, int CoDepX, int CodepY) {
+
 
         try {
             int newPosX = pionsX + modx, newposY = pionsY + mody;
@@ -150,6 +158,7 @@ public class Methode_Main {
 
                 verifjouable(tab, newPosX, newposY, modx, mody, compteur, pion, listCo, CoDepX, CodepY);
             }
+
             else if (tab[newposY][newPosX].equals(".") && compteur >= 1) {
                 ArrayList<Integer> InfoCo = new ArrayList<>();
                 InfoCo.add(newPosX);
@@ -158,6 +167,7 @@ public class Methode_Main {
                 InfoCo.add(CodepY);
                 InfoCo.add(compteur);
                 listCo.add(InfoCo);
+
 
 
             }

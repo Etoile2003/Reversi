@@ -6,7 +6,7 @@ import java.util.List;
 // list (xpla , ypla , xdep ydep , nbrjetonrt)
 public class Methode_Bastien {
 
-    public static void placerJeton(List<List> Listco , int x , int y , String jeton){
+    public static void placerJeton(ArrayList<ArrayList> Listco , int x , int y , String jeton){
         System.out.println("X " + x);
         System.out.println("Y "+ y );
         int poid =  Listco.size() ;
@@ -14,7 +14,7 @@ public class Methode_Bastien {
 
 
         for (int i = 0; i < poid; i = i + 1) {
-            List<Integer> Listeplacement =  Listco.get(i) ;
+            ArrayList<Integer> Listeplacement =  Listco.get(i) ;
 
             if (x == Listeplacement.get(0) && y == Listeplacement.get(2)){
                 canPlace = true ;
@@ -38,7 +38,7 @@ public class Methode_Bastien {
 
 
 
-    public static void retournerjeton(List<List> allco, int x , int y ,  String jeton ){
+    public static void retournerjeton(ArrayList<ArrayList> allco, int x , int y ,  String jeton ){
 
         //faire une troisieme list qui contien seulement le nombre de jeton retourné
 
@@ -47,7 +47,7 @@ public class Methode_Bastien {
 //        System.out.println("maxdepart "+coDepart.size());
 //        System.out.println("nbrJeton "+nbrJeton.size());
         for (int i = 0; allco.size() > i; i = i + 1) {
-            List<Integer> Listeplacement =  allco.get(i) ;
+            ArrayList<Integer> Listeplacement =  allco.get(i) ;
             if (Listeplacement.get(0) == x && Listeplacement.get(1) == y){
 
                 int xDebut = Listeplacement.get(0);

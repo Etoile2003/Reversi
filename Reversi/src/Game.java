@@ -43,7 +43,8 @@ public class Game {
                 }while (rejouer) ;
 
             }
-
+            else
+                System.out.println("Le joueur ⬡ ne peut pas jouer" );
             rejouer = true;
             //coordoner dans un int
 
