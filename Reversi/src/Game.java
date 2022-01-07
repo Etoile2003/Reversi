@@ -14,7 +14,8 @@ public class Game {
             int y = 0;
 
             rejouer = true ;
-            if ( Methode_Main.listDesCoJouablesFct(Menu.tabint, 1).size() != 0 ){
+            //
+             if ( true ){//Methode_Main.listDesCoJouablesFct(Menu.tabint, 1).size() != 0
 
            
                 do {
