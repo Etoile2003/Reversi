@@ -16,7 +16,7 @@ public class Methode_Bastien {
         for (int i = 0; i < poid; i = i + 1) {
             ArrayList<Integer> Listeplacement =  Listco.get(i) ;
 
-            if (x == Listeplacement.get(0) && y == Listeplacement.get(2)){
+            if (x == Listeplacement.get(0) && y == Listeplacement.get(1)){
                 canPlace = true ;
 
             }
@@ -25,7 +25,7 @@ public class Methode_Bastien {
         }
         if (canPlace){
             System.out.println("jeton placé");
-            Menu.plateau[x][y] = jeton ;
+            Menu.plateau[y][x] = jeton ;
             Game.rejouer = false ;
             retournerjeton( Listco , x , y , jeton);
         }
@@ -50,14 +50,19 @@ public class Methode_Bastien {
             ArrayList<Integer> Listeplacement =  allco.get(i) ;
             if (Listeplacement.get(0) == x && Listeplacement.get(1) == y){
 
-                int xDebut = Listeplacement.get(0);
-                int yDebut = Listeplacement.get(1);
+                int xDebut = Listeplacement.get(3);
+                int yDebut = Listeplacement.get(2);
 
 
 
-                int diffX =  Listeplacement.get(2) - xDebut ;
-                int diffY = Listeplacement.get(3) - yDebut ;
+                int diffX =  Listeplacement.get(0) - xDebut ;
+                int diffY = Listeplacement.get(1) - yDebut ;
 
+
+                System.out.println("xdebut "+xDebut);
+                System.out.println("ydebut "+yDebut);
+                System.out.println("x "+Listeplacement.get(0));
+                System.out.println("y "+Listeplacement.get(1));
                 System.out.println("diffX "+diffX);
                 System.out.println("DiffY "+diffY);
                 int incrementX ;
@@ -82,9 +87,9 @@ public class Methode_Bastien {
                 for (int j = 0; j < Listeplacement.get(4) ; j++) {
 
 
-                    System.out.println("x " + (xDebut + incrementX));
-                    System.out.println("y " + (yDebut + incrementY));
-                    Menu.plateau[xDebut + incrementX][yDebut + incrementY] = jeton;
+                    System.out.println("x a été modifie  " + (xDebut + incrementX));
+                    System.out.println("y a été modifie " + (yDebut + incrementY));
+                    Menu.plateau[yDebut + incrementY][ xDebut + incrementX] = jeton;
 
 
                     if(diffX > 0 )

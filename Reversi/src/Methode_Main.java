@@ -50,7 +50,7 @@ public class Methode_Main {
             for (int j = 0; j < tab.length; j++) {
                 if (joueur == 1) {
                     if (tab[i][j].equals("⬡")) {
-                        System.out.println("pions trouver en "+j+" "+i);
+                        //System.out.println("pions trouver en "+j+" "+i);
                         int compteur;
 
 
