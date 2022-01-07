@@ -71,7 +71,9 @@ public class Game {
                 }while (x <1 || x > 8 || y < 1 || y > 8 ) ;
                 x-- ;
                 y-- ;
-               Methode_Bastien.placerJeton(Methode_Main.listDesCoJouablesFct(Menu.tabint , 2) , x , y ,"⬢");
+
+                Methode_Bastien.placerJeton(Methode_Main.listDesCoJouablesFct(Menu.tabint , 2) , x , y ,"⬢");
+
             }while (rejouer) ;
 
 
