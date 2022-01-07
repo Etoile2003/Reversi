@@ -6,7 +6,7 @@ public class Game {
     public static boolean rejouer  = true ;
     public static void myGame(){
         Scanner sc = new Scanner(System.in) ;
-        Methode_Main.listDesCoJouablesFct(Menu.plateau,1);
+        Methode_Main.listDesCoJouablesFct(Menu.tabint,1);
 
         System.out.println("Il faut saisire l'axe verticale puis l'axe horizontal ");
         while (playGame) {
@@ -14,7 +14,8 @@ public class Game {
             int y = 0;
 
             rejouer = true ;
-            if ( Methode_Main.listDesCoJouablesFct(Menu.plateau, 1).size() != 0 ){
+            //
+             if ( true ){//Methode_Main.listDesCoJouablesFct(Menu.tabint, 1).size() != 0
 
            
                 do {
@@ -24,7 +25,7 @@ public class Game {
                     do {
                         System.out.println("c'est au noir de jouer ");
 
-                        Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouablesFct(Menu.plateau, 1));
+                        Methode_Main.afficherTableau(Menu.tabint,Methode_Main.listDesCoJouablesFct(Menu.tabint, 1));
 
                         try {
                             x = Integer.parseInt(sc.nextLine());
@@ -39,7 +40,7 @@ public class Game {
 
                     x-- ;
                     y-- ;
-                    Methode_Bastien.placerJeton(Methode_Main.listDesCoJouablesFct(Menu.plateau, 1), x, y, "⬡");
+                    Methode_Bastien.placerJeton(Methode_Main.listDesCoJouablesFct(Menu.tabint, 1), x, y, "⬡");
                 }while (rejouer) ;
 
             }
@@ -55,7 +56,7 @@ public class Game {
                 do {
                     System.out.println("c'est au blanc de jouer ");
 
-                    Methode_Main.afficherTableau(Menu.plateau,Methode_Main.listDesCoJouablesFct(Menu.plateau, 2));
+                    Methode_Main.afficherTableau(Menu.tabint,Methode_Main.listDesCoJouablesFct(Menu.tabint, 2));
 
                     try {
                         x = Integer.parseInt(sc.nextLine());
@@ -70,7 +71,7 @@ public class Game {
                 }while (x <1 || x > 8 || y < 1 || y > 8 ) ;
                 x-- ;
                 y-- ;
-                Methode_Bastien.placerJeton(Methode_Main.listDesCoJouablesFct(Menu.plateau , 2) , x , y ,"⬢");
+               Methode_Bastien.placerJeton(Methode_Main.listDesCoJouablesFct(Menu.tabint , 2) , x , y ,"⬢");
             }while (rejouer) ;
 
 
