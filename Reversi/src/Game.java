@@ -16,7 +16,7 @@ public class Game {
             rejouer = true ;
             //
              if ( true ){//Methode_Main.listDesCoJouablesFct(Menu.tabint, 1).size() != 0
-
+                //yes
            
                 do {
                     x = 0;
