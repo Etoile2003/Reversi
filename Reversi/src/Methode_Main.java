@@ -21,6 +21,7 @@ public class Methode_Main {
 
 
 
+// teste github
 
         }
         System.out.println(" 1  2   3   4   5   6   7   8");
@@ -159,7 +160,7 @@ public class Methode_Main {
 
                 verifjouable(tab, newPosX, newposY, modx, mody, compteur, pion, listCo, CoDepX, CodepY);
             } else if (tab[newposY][newPosX] == 0 && compteur >= 1) {
-                tab[newposY][newPosX]= -1;
+
                 ArrayList<Integer> InfoCo = new ArrayList<>();
                 InfoCo.add(newPosX);
                 InfoCo.add(newposY);
