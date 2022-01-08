@@ -41,33 +41,33 @@ public class Methode_Main {
         int CoDepX = -1, CoDepY = -1;
 
         for (int i = 0; i < tab.length; i++) {
-            for (int j = 0; j < tab.length; j++) {
+            for (int j = 0; j < tab[1].length; j++) {
                 if (joueur == 1) {
-                    if (tab[i][j] == 1) {
-                        //System.out.println("pions trouver en "+j+" "+i);
+                    if (tab[j][i] == 1) {
+                        System.out.println("pions trouver en "+j+" "+i);
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, -1, -1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, -1, -1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 1, -1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 1, -1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, -1, 1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, -1, 1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 1, 1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 1, 1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, -1, 0, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, -1, 0, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 1, 0, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 1, 0, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 0, -1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 0, -1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 0, 1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 0, 1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
                     }
                 }
                 else {
@@ -75,28 +75,28 @@ public class Methode_Main {
                         System.out.println("pions trouver en "+j+" "+i);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, -1, -1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, -1, -1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 1, -1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 1, -1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, -1, 1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, -1, 1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 1, 1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 1, 1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, -1, 0, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, -1, 0, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 1, 0, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 1, 0, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 0, -1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 0, -1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
 
                         compteur = 0;
-                        verifjouable(Menu.tabint, i, j, 0, 1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
+                        verifjouable(Menu.tabint, i,j, 0, 1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
                     }
                 }
             }
@@ -123,6 +123,7 @@ public class Methode_Main {
                 InfoCo.add(CodepY);
                 InfoCo.add(compteur);
                 listCo.add(InfoCo);
+
             }
         } catch (Exception e) {
         }
