@@ -37,6 +37,7 @@ public class Methode_Main {
 
     public static ArrayList listDesCoJouablesFct(int[][] tab, int joueur) {
         int compteur;
+        ResetPosJouable(tab);
         ArrayList<ArrayList> ListeCoJouable = new ArrayList<>();
         int CoDepX = -1, CoDepY = -1;
 
@@ -126,6 +127,16 @@ public class Methode_Main {
 
             }
         } catch (Exception e) {
+        }
+    }
+    public static void ResetPosJouable (int[][]tab){
+        for (int i = 0; i < tab.length ; i++) {
+            for (int j = 0; j <tab[1].length ; j++) {
+                if (tab[i][j]<0){
+                    tab[i][j]=0;
+                }
+            }
+
         }
     }
 }
