@@ -8,7 +8,7 @@ public class Game {
         Scanner sc = new Scanner(System.in) ;
         Methode_Main.listDesCoJouablesFct(Menu.tabint,1);
 
-        System.out.println("Il faut saisire l'axe verticale puis l'axe horizontal ");
+        System.out.println("Il faut saisire l'axe horizontal puis verticale ");
         while (playGame) {
             int x = 0;
             int y = 0;
@@ -40,7 +40,7 @@ public class Game {
 
                     x-- ;
                     y-- ;
-                    Methode_Bastien.placerJeton(Methode_Main.listDesCoJouablesFct(Menu.tabint, 1), x, y, "⬡");
+                    Methode_Bastien.placerJeton( x, y, "⬡");
                 }while (rejouer) ;
 
             }
@@ -72,7 +72,7 @@ public class Game {
                 x-- ;
                 y-- ;
 
-                Methode_Bastien.placerJeton(Methode_Main.listDesCoJouablesFct(Menu.tabint , 2) , x , y ,"⬢");
+                Methode_Bastien.placerJeton( x , y ,"⬢");
 
             }while (rejouer) ;
 
