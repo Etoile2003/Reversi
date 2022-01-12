@@ -74,7 +74,7 @@ public class Methode_Main {
                         verifjouable(Menu.tabint, i, j, 0, 1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
                     }
                 } else {
-                    if (tab[i][j] == 2) {
+                    if (tab[j][i] == 2) {
                         //System.out.println("pions trouver en " + j + " " + i);
 
                         compteur = 0;
@@ -98,7 +98,7 @@ public class Methode_Main {
                         compteur = 0;
                         verifjouable(Menu.tabint, i, j, 0, -1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
 
-                        compteur = 0;
+
                         verifjouable(Menu.tabint, i, j, 0, 1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
                     }
                 }
