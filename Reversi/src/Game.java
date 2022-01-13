@@ -7,7 +7,7 @@ public class Game {
     public static boolean rejouer  = true ;
     public static void myGame( boolean ia ) throws InterruptedException {
         Scanner sc = new Scanner(System.in) ;
-        Methode_Main.listDesCoJouablesFct(Menu.tabint,1);
+        Methode_Position.listDesCoJouablesFct(Plateau.tabint,1);
 
         System.out.println("Il faut saisire l'axe horizontal puis verticale ");
         int passCompt = 0 ;
@@ -18,7 +18,7 @@ public class Game {
 
             rejouer = true ;
             //
-            if (canPlay(passCompt) && playGame ){//Methode_Main.listDesCoJouablesFct(Menu.tabint, 1).size() != 0
+            if (canPlay(passCompt) && playGame ){
                 passCompt =  0 ;
 
                 do {
@@ -27,8 +27,8 @@ public class Game {
 
                     do {
                         System.out.println("c'est au noir de jouer ");
-                        Methode_Main.listDesCoJouablesFct(Menu.tabint, 1);
-                        Methode_Main.afficherTableau(Menu.tabint);
+                        Methode_Position.listDesCoJouablesFct(Plateau.tabint, 1);
+                        Methode_Position.afficherTableau(Plateau.tabint);
 
                         try {
                             x = Integer.parseInt(sc.nextLine());
@@ -43,7 +43,7 @@ public class Game {
 
                     x-- ;
                     y-- ;
-                    Methode_Bastien.placerJeton( x, y, "⬡");
+                    Methode_Jeton.placerJeton( x, y, "⬡");
                 }while (rejouer) ;
 
             }
@@ -62,8 +62,8 @@ public class Game {
 
                         do {
                             System.out.println("c'est au blanc de jouer ");
-                            Methode_Main.listDesCoJouablesFct(Menu.tabint, 2);
-                            Methode_Main.afficherTableau(Menu.tabint);
+                            Methode_Position.listDesCoJouablesFct(Plateau.tabint, 2);
+                            Methode_Position.afficherTableau(Plateau.tabint);
 
                             try {
                                 x = Integer.parseInt(sc.nextLine());
@@ -79,14 +79,14 @@ public class Game {
                         x--;
                         y--;
 
-                        Methode_Bastien.placerJeton(x, y, "⬢");
+                        Methode_Jeton.placerJeton(x, y, "⬢");
 
                     } while (rejouer);
                 }
                 else {
                     System.out.println("c'est a l'ia de jouer");
-                    Methode_Main.listDesCoJouablesFct(Menu.tabint, 2);
-                    Methode_Main.afficherTableau(Menu.tabint);
+                    Methode_Position.listDesCoJouablesFct(Plateau.tabint, 2);
+                    Methode_Position.afficherTableau(Plateau.tabint);
                     TimeUnit.SECONDS.sleep(2);
                     iaPlay() ;
                 }
@@ -115,15 +115,15 @@ public class Game {
         int minus  = -1;
 
 
-        for (int i = 0; i < Menu.tabint.length; i++) {
-            for (int j = 0; j < Menu.tabint.length; j++) {
+        for (int i = 0; i < Plateau.tabint.length; i++) {
+            for (int j = 0; j < Plateau.tabint.length; j++) {
 
-                if (Menu.tabint[i][j] < minus){
+                if (Plateau.tabint[i][j] < minus){
                     x = j ;
                     y = i ;
-                    minus = Menu.tabint[i][j] ;
+                    minus = Plateau.tabint[i][j] ;
                 }
-                else if (minus ==  Menu.tabint[i][j]){
+                else if (minus ==  Plateau.tabint[i][j]){
                     int number = (int)(Math.random() * 10);
 
                     if (number < 5 ){
@@ -138,7 +138,7 @@ public class Game {
 
 
         }
-        Methode_Bastien.placerJeton(x, y, "⬢");
+        Methode_Jeton.placerJeton(x, y, "⬢");
 
 
     }
@@ -148,16 +148,16 @@ public class Game {
         int blanc = 0 ;
         int noire = 0 ;
 
-        for (int i = 0; i < Menu.tabint.length; i++) {
-            for (int j = 0; j < Menu.tabint.length; j++) {
+        for (int i = 0; i < Plateau.tabint.length; i++) {
+            for (int j = 0; j < Plateau.tabint.length; j++) {
 
 
-                if ( Menu.tabint[i][j] == 1){
+                if ( Plateau.tabint[i][j] == 1){
                     noire++ ;
                 }
 
 
-                else if  ( Menu.tabint[i][j] == 2) {
+                else if  ( Plateau.tabint[i][j] == 2) {
                     blanc++ ;
 
                 }
@@ -196,11 +196,11 @@ public class Game {
             System.out.println("personne ne peut jouer fin de partie ");
         }
 
-        for (int i = 0; i < Menu.tabint.length; i++) {
+        for (int i = 0; i < Plateau.tabint.length; i++) {
 
-            for (int j = 0; j < Menu.tabint.length; j++) {
+            for (int j = 0; j < Plateau.tabint.length; j++) {
 
-                if (Menu.tabint[i][j] < 0 ){
+                if (Plateau.tabint[i][j] < 0 ){
                     return true ;
                 }
 

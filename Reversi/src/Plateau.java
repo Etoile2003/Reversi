@@ -1,6 +1,6 @@
 
 
-public class Menu {
+public class Plateau {
 //⬢⬡
 
     public static int[][]tabint =
