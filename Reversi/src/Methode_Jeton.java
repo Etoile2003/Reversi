@@ -1,16 +1,14 @@
 // list (xpla , ypla , xdep ydep , nbrjetonrt)
 public class Methode_Jeton {
 
-    public static void placerJeton( int x , int y , String jeton){
+    public static void placerJeton( int x , int y ,int jeton){
 
         boolean canPlace = Plateau.tabint[y][x] < 0;
 
         if (canPlace){
             System.out.println("jeton placé");
-            if (jeton == "⬡")
-                Plateau.tabint[y][x] = 1 ;
-            else
-                Plateau.tabint[y][x] = 2 ;
+
+            Plateau.tabint[y][x] = jeton ;
 
             Game.rejouer = false ;
             retournerjeton( x , y , jeton);
@@ -24,7 +22,7 @@ public class Methode_Jeton {
 
 
 
-    public static void retournerjeton( int x , int y ,  String jeton ){
+    public static void retournerjeton( int x , int y ,  int jeton ){
 
         //faire une troisieme list qui contien seulement le nombre de jeton retourné
 
@@ -32,7 +30,7 @@ public class Methode_Jeton {
 //        System.out.println("max "+coArrive.size());
 //        System.out.println("maxdepart "+coDepart.size());
 //        System.out.println("nbrJeton "+nbrJeton.size());
-        if (jeton == "⬡") {
+        if (jeton == 1) {
 
 
             look(x , y , -1 , 0 ,2 , 1 , 0  , x , y );

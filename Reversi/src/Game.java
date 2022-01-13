@@ -12,17 +12,18 @@ public class Game {
         System.out.println("Il faut saisire l'axe horizontal puis verticale ");
         int passCompt = 0 ;
         while (playGame) {
-            int x;
-            int y;
+
+            int x ;
+            int y ;
+
 
 
             rejouer = true ;
-            //
+
             if (canPlay(passCompt) && playGame ){
                 passCompt =  0 ;
 
                 do {
-
 
                     do {
                         System.out.println("c'est au noir de jouer ");
@@ -42,7 +43,7 @@ public class Game {
 
                     x-- ;
                     y-- ;
-                    Methode_Jeton.placerJeton( x, y, "⬡");
+                    Methode_Jeton.placerJeton( x, y, 1);
                 }while (rejouer) ;
 
             }
@@ -78,7 +79,7 @@ public class Game {
                         x--;
                         y--;
 
-                        Methode_Jeton.placerJeton(x, y, "⬢");
+                        Methode_Jeton.placerJeton(x, y, 2);
 
                     } while (rejouer);
                 }
@@ -130,7 +131,7 @@ public class Game {
 
 
         }
-        Methode_Jeton.placerJeton(x, y, "⬢");
+        Methode_Jeton.placerJeton(x, y, 2);
 
 
     }
