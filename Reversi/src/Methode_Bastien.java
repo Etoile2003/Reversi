@@ -48,7 +48,7 @@ public class Methode_Bastien {
             look(x , y , -1 , 0 ,2 , 1 , 0  , x , y );
             look(x , y , -1 , -1 ,2 , 1 , 0  , x , y );
             look(x , y , 0 , -1 ,2 , 1 , 0  , x , y );
-            look(x , y , 1 , 1 ,2 , 1 , 0  , x , y );
+            look(x , y , 1 , -1 ,2 , 1 , 0  , x , y );
             look(x , y , 1 , 0 ,2 , 1 , 0  , x , y );
             look(x , y , 1 , 1 ,2 , 1 , 0  , x , y );
             look(x , y , 0 , 1 ,2 , 1 , 0  , x , y );
@@ -60,7 +60,7 @@ public class Methode_Bastien {
             look(x , y , -1 , 0 ,1 , 2 , 0  , x , y );
             look(x , y , -1 , -1 ,1 , 2 , 0  , x , y );
             look(x , y , 0 , -1 ,1 , 2 , 0  , x , y );
-            look(x , y , 1 , 1 ,1 , 2 , 0  , x , y );
+            look(x , y , 1 , -1 ,1 , 2 , 0  , x , y );
             look(x , y , 1 , 0 ,1 , 2 , 0  , x , y );
             look(x , y , 1 , 1 ,1 , 2 , 0  , x , y );
             look(x , y , 0 , 1 ,1 , 2 , 0  , x , y );

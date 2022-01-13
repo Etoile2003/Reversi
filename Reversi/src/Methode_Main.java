@@ -29,8 +29,8 @@ public class Methode_Main {
             System.out.println("Departy " + cojouable.get(3));
             System.out.println("nbrjeton " + cojouable.get(4));
             System.out.println("------------------------------------");
-        }*/
-      /* for (int i = 0; i < tab.length; i++) {
+        }
+        for (int i = 0; i < tab.length; i++) {
             for (int j = 0; j < tab[1].length; j++) {
                 System.out.print(tab[i][j] + "\t");
             }
@@ -48,7 +48,7 @@ public class Methode_Main {
             for (int j = 0; j < tab[1].length; j++) {
                 if (joueur == 1) {
                     if (tab[j][i] == 1) {
-                        //System.out.println("pions trouver en " + j + " " + i);
+                        System.out.println("pions trouver en " + j + " " + i);
                         compteur = 0;
                         verifjouable(Menu.tabint, i, j, -1, -1, compteur, 2, ListeCoJouable, CoDepX, CoDepY);
 
@@ -75,7 +75,7 @@ public class Methode_Main {
                     }
                 } else {
                     if (tab[j][i] == 2) {
-                        //System.out.println("pions trouver en " + j + " " + i);
+                        System.out.println("pions trouver en " + j + " " + i);
 
                         compteur = 0;
                         verifjouable(Menu.tabint, i, j, -1, -1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
@@ -98,7 +98,7 @@ public class Methode_Main {
                         compteur = 0;
                         verifjouable(Menu.tabint, i, j, 0, -1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
 
-
+                        compteur = 0;
                         verifjouable(Menu.tabint, i, j, 0, 1, compteur, 1, ListeCoJouable, CoDepX, CoDepY);
                     }
                 }
