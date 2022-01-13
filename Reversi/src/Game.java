@@ -27,8 +27,8 @@ public class Game {
 
                     do {
                         System.out.println("c'est au noir de jouer ");
-
-                        Methode_Main.afficherTableau(Menu.tabint,Methode_Main.listDesCoJouablesFct(Menu.tabint, 1));
+                        Methode_Main.listDesCoJouablesFct(Menu.tabint, 1);
+                        Methode_Main.afficherTableau(Menu.tabint);
 
                         try {
                             x = Integer.parseInt(sc.nextLine());
@@ -62,8 +62,8 @@ public class Game {
 
                         do {
                             System.out.println("c'est au blanc de jouer ");
-
-                            Methode_Main.afficherTableau(Menu.tabint, Methode_Main.listDesCoJouablesFct(Menu.tabint, 2));
+                            Methode_Main.listDesCoJouablesFct(Menu.tabint, 2);
+                            Methode_Main.afficherTableau(Menu.tabint);
 
                             try {
                                 x = Integer.parseInt(sc.nextLine());
@@ -85,9 +85,9 @@ public class Game {
                 }
                 else {
                     System.out.println("c'est a l'ia de jouer");
-                    Methode_Main.afficherTableau(Menu.tabint, Methode_Main.listDesCoJouablesFct(Menu.tabint, 2));
-                    Methode_Main.listDesCoJouablesFct(Menu.tabint, 2) ;
-                    TimeUnit.SECONDS.sleep(3);
+                    Methode_Main.listDesCoJouablesFct(Menu.tabint, 2);
+                    Methode_Main.afficherTableau(Menu.tabint);
+                    TimeUnit.SECONDS.sleep(2);
                     iaPlay() ;
                 }
 
@@ -112,7 +112,7 @@ public class Game {
     private static void iaPlay() {
         int x  = 0;
         int y = 0;
-        int minus  = 0;
+        int minus  = -1;
 
 
         for (int i = 0; i < Menu.tabint.length; i++) {
@@ -127,6 +127,7 @@ public class Game {
                     int number = (int)(Math.random() * 10);
 
                     if (number < 5 ){
+
                         x = j ;
                         y = i ;
                     }
