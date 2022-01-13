@@ -15,12 +15,12 @@ public class Menu {
 
 
             {       {0,0,0,0,0,0,0,0},
-                    {0,0,0,0,0,0,0,0},          // changer la tab de string pour un tab de int
-                    {0,0,0,0,0,0,0,0},          //1 => noire 2 => blanc 0 => vide -1 => case jouable
+                    {0,0,0,0,0,0,2,0},          // changer la tab de string pour un tab de int
+                    {0,0,0,0,0,2,0,0},          //1 => noire 2 => blanc 0 => vide -1 => case jouable
                     {0,0,0,2,1,0,0,0},
                     {0,0,0,1,2,0,0,0},
-                    {0,0,2,0,0,0,0,0},
-                    {0,0,0,0,0,0,0,0},
+                    {0,0,0,0,1,1,0,0},
+                    {0,0,0,0,1,0,1,0},
                     {0,0,0,0,0,0,0,0}};
 
 //                    {{0,0,0,0,0,0,0,0},
