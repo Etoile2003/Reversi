@@ -177,6 +177,10 @@ public class Game {
         System.out.println("Nombre de jeton blanc :"+blanc);
 
 
+        Methode_Position.listDesCoJouablesFct(Plateau.tabint, 1);
+        Methode_Position.afficherTableau(Plateau.tabint);
+
+
 
 
 
