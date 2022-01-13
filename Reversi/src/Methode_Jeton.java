@@ -3,10 +3,7 @@ public class Methode_Jeton {
 
     public static void placerJeton( int x , int y ,int jeton){
 
-        boolean canPlace = false ;
-
-        if (Plateau.tabint[y][x] < 0   )
-            canPlace = true ;
+        boolean canPlace = Plateau.tabint[y][x] < 0;
 
         if (canPlace){
             System.out.println("jeton placé");

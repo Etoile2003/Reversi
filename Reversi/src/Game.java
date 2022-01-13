@@ -12,8 +12,10 @@ public class Game {
         System.out.println("Il faut saisire l'axe horizontal puis verticale ");
         int passCompt = 0 ;
         while (playGame) {
+
             int x ;
             int y ;
+
 
 
             rejouer = true ;
@@ -95,13 +97,6 @@ public class Game {
                 System.out.println("le joueur ⬢ ne peut pas jouer");
                 passCompt++ ;
             }
-
-
-
-
-
-
-
         }
         endGame() ;
 
