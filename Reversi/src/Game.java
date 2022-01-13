@@ -97,13 +97,6 @@ public class Game {
                 System.out.println("le joueur ⬢ ne peut pas jouer");
                 passCompt++ ;
             }
-
-
-
-
-
-
-
         }
         endGame() ;
 
