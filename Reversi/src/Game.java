@@ -17,9 +17,9 @@ public class Game {
 
             rejouer = true ;
             //
-             if (canPlay(passCompt) && playGame ){//Methode_Main.listDesCoJouablesFct(Menu.tabint, 1).size() != 0
+            if (canPlay(passCompt) && playGame ){//Methode_Main.listDesCoJouablesFct(Menu.tabint, 1).size() != 0
                 passCompt =  0 ;
-           
+
                 do {
                     x = 0;
                     y = 0;
@@ -47,9 +47,9 @@ public class Game {
 
             }
             else  {
-                 System.out.println("Le joueur ⬡ ne peut pas jouer" );
-                 passCompt++ ;
-             }
+                System.out.println("Le joueur ⬡ ne peut pas jouer" );
+                passCompt++ ;
+            }
 
             rejouer = true;
             //coordoner dans un int

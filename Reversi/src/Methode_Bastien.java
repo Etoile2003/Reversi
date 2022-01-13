@@ -69,7 +69,7 @@ public class Methode_Bastien {
 
         }
 
-        }
+    }
 
 
 
@@ -77,30 +77,30 @@ public class Methode_Bastien {
 
 
     public static void look(int x , int y , int directionX , int directionY , int what , int valjoueur , int compteur , int xini , int yini ){
-    try {
-        if(compteur == 0 ){
-            if(Menu.tabint[y+directionY][x+directionX] == what  ){
-                compteur++ ;
-                System.out.println("je ai trouvé en x "+ directionX + " y "+directionY);
-                look(x+directionX ,y+directionY , directionX , directionY ,  what , valjoueur , compteur  , xini , yini);
-            }
-            else
-                System.out.println("je n'ai rien trouvé en x "+ directionX + " y "+directionY);
-        }
-        else {
-            if(Menu.tabint[y+ directionY][x+ directionX] == valjoueur){
-                System.out.println("fin des recherche en x "+( x+directionX) + " y "+ (y+ directionY) +" je vais fill");
-                fill(xini , yini , x  , y , valjoueur);
-            }
-            else if (Menu.tabint[y+ directionY][x+ directionX] == what){
-                System.out.println("j'ai trouvé un "+ what + " en x "+ (x+ directionX) + " y "+ (y+ directionY) +" je continue de chercher ");
-                compteur++ ;
-                look(x+directionX ,y+directionY , directionX , directionY ,  what , valjoueur , compteur ,  xini ,yini );
+        try {
+            if(compteur == 0 ){
+                if(Menu.tabint[y+directionY][x+directionX] == what  ){
+                    compteur++ ;
+                    System.out.println("je ai trouvé en x "+ directionX + " y "+directionY);
+                    look(x+directionX ,y+directionY , directionX , directionY ,  what , valjoueur , compteur  , xini , yini);
+                }
+                else
+                    System.out.println("je n'ai rien trouvé en x "+ directionX + " y "+directionY);
             }
             else {
-                System.out.println("je n'ai finalement rien trouvé en x "+ (x+ directionX) +" y "+ (y+ directionY)+ " :(");
+                if(Menu.tabint[y+ directionY][x+ directionX] == valjoueur){
+                    System.out.println("fin des recherche en x "+( x+directionX) + " y "+ (y+ directionY) +" je vais fill");
+                    fill(xini , yini , x  , y , valjoueur);
+                }
+                else if (Menu.tabint[y+ directionY][x+ directionX] == what){
+                    System.out.println("j'ai trouvé un "+ what + " en x "+ (x+ directionX) + " y "+ (y+ directionY) +" je continue de chercher ");
+                    compteur++ ;
+                    look(x+directionX ,y+directionY , directionX , directionY ,  what , valjoueur , compteur ,  xini ,yini );
+                }
+                else {
+                    System.out.println("je n'ai finalement rien trouvé en x "+ (x+ directionX) +" y "+ (y+ directionY)+ " :(");
+                }
             }
-    }
 
 
 
@@ -108,7 +108,7 @@ public class Methode_Bastien {
 
 
 
-    }
+        }
 
     }
 
@@ -132,7 +132,7 @@ public class Methode_Bastien {
             Directx = 1 ;
 
 
-         if (Directy < 0 )
+        if (Directy < 0 )
             Directy = -1 ;
         else if (Directy > 0 )
             Directy = 1 ;
@@ -147,14 +147,13 @@ public class Methode_Bastien {
 
 
 
-    }
+        }
         else
             System.out.println("fill a fini");
 
 
     }
 }
-
 
 
 
