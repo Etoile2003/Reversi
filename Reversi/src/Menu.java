@@ -15,8 +15,9 @@ public class Menu {
                 ia = -1 ;
             }
 
-        }while(ia <1 || ia >2 ) ;
-        Game.myGame(ia != 1);
+        }while(ia <1 || ia >3 ) ;
+        if (ia != 3 )
+            Game.myGame(ia != 1);
     }
 
 }

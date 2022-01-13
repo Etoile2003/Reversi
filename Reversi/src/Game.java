@@ -137,7 +137,8 @@ public class Game {
     }
 
 
-    public static void endGame(){
+    public static void endGame() throws InterruptedException {
+        Scanner sc = new Scanner(System.in) ;
         int blanc = 0 ;
         int noire = 0 ;
 
@@ -180,7 +181,15 @@ public class Game {
         Methode_Position.listDesCoJouablesFct(Plateau.tabint, 1);
         Methode_Position.afficherTableau(Plateau.tabint);
 
-
+        System.out.println("Appuyer surt n'importe quel touche pour continuer ");
+        int wait ;
+        try {
+            wait = Integer.parseInt(sc.nextLine()) ;
+        }catch (Exception e){
+            wait = 1 ;
+        }
+        Plateau.Restart();
+        Menu.menu();
 
 
 
@@ -208,5 +217,7 @@ public class Game {
 
         return false ;
     }
+
+
 
 }
