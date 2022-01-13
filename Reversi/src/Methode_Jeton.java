@@ -24,12 +24,6 @@ public class Methode_Jeton {
 
     public static void retournerjeton( int x , int y ,  int jeton ){
 
-        //faire une troisieme list qui contien seulement le nombre de jeton retourné
-
-
-//        System.out.println("max "+coArrive.size());
-//        System.out.println("maxdepart "+coDepart.size());
-//        System.out.println("nbrJeton "+nbrJeton.size());
         if (jeton == 1) {
 
 
