@@ -1,8 +1,20 @@
+import java.util.Scanner;
+
 public class Main {
 
 
-    public static void main(String[] args) {
-        Game.myGame();
+    public static void main(String[] args) throws InterruptedException {
+        int ia ;
+        Scanner sc = new Scanner(System.in) ;
+        System.out.println(" voulez vous jouer contre un joueur ou contre l'ia ? \n 1. joueur \n 2. ia ");
+        do {
+             ia = Integer.parseInt(sc.nextLine()) ;
+        }while(ia <1 || ia >2 ) ;
+        if (ia == 1){
+            Game.myGame(false);
+        }
+        else
+            Game.myGame(true);
 
     }
 }
