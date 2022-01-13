@@ -8,7 +8,12 @@ public class Main {
         Scanner sc = new Scanner(System.in) ;
         System.out.println(" voulez vous jouer contre un joueur ou contre l'ia ? \n 1. joueur \n 2. ia ");
         do {
-             ia = Integer.parseInt(sc.nextLine()) ;
+            try{
+                ia = Integer.parseInt(sc.nextLine()) ;
+            }catch (Exception e){
+                ia = -1 ;
+            }
+
         }while(ia <1 || ia >2 ) ;
         if (ia == 1){
             Game.myGame(false);

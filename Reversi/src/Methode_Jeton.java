@@ -1,24 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 // list (xpla , ypla , xdep ydep , nbrjetonrt)
-public class Methode_Bastien {
+public class Methode_Jeton {
 
     public static void placerJeton( int x , int y , String jeton){
 
         boolean canPlace = false ;
 
-        if (Menu.tabint[y][x] < 0   )
+        if (Plateau.tabint[y][x] < 0   )
             canPlace = true ;
 
         if (canPlace){
             System.out.println("jeton placé");
             if (jeton == "⬡")
-                Menu.tabint[y][x] = 1 ;
+                Plateau.tabint[y][x] = 1 ;
             else
-                Menu.tabint[y][x] = 2 ;
+                Plateau.tabint[y][x] = 2 ;
 
             Game.rejouer = false ;
             retournerjeton( x , y , jeton);
@@ -77,7 +72,7 @@ public class Methode_Bastien {
     public static void look(int x , int y , int directionX , int directionY , int what , int valjoueur , int compteur , int xini , int yini ){
         try {
             if(compteur == 0 ){
-                if(Menu.tabint[y+directionY][x+directionX] == what  ){
+                if(Plateau.tabint[y+directionY][x+directionX] == what  ){
                     compteur++ ;
 
                     look(x+directionX ,y+directionY , directionX , directionY ,  what , valjoueur , compteur  , xini , yini);
@@ -85,10 +80,10 @@ public class Methode_Bastien {
 
             }
             else {
-                if(Menu.tabint[y+ directionY][x+ directionX] == valjoueur){
+                if(Plateau.tabint[y+ directionY][x+ directionX] == valjoueur){
                     fill(xini , yini , x  , y , valjoueur);
                 }
-                else if (Menu.tabint[y+ directionY][x+ directionX] == what){
+                else if (Plateau.tabint[y+ directionY][x+ directionX] == what){
                     compteur++ ;
                     look(x+directionX ,y+directionY , directionX , directionY ,  what , valjoueur , compteur ,  xini ,yini );
                 }
@@ -121,7 +116,7 @@ public class Methode_Bastien {
 
 
         if (Xdep != Xend || Ydep != Yend ){
-            Menu.tabint[Ydep +Directy][Xdep +Directx] = valJoueur ;
+            Plateau.tabint[Ydep +Directy][Xdep +Directx] = valJoueur ;
             fill(Xdep+Directx ,Ydep+Directy , Xend , Yend , valJoueur );
         }
     }

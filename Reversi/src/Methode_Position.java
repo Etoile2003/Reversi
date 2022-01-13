@@ -1,6 +1,6 @@
 
 
-public class Methode_Main {
+public class Methode_Position {
     public static void afficherTableau(int[][] tab) {
         System.out.println(" \t1   2   3   4   5   6   7   8");
         for (int i = 0; i < tab.length; i++) {
@@ -20,12 +20,12 @@ public class Methode_Main {
         }
 
 
-        for (int i = 0; i < tab.length; i++) {
-            for (int j = 0; j < tab[1].length; j++) {
-                System.out.print(tab[i][j] + "\t");
-            }
-            System.out.println();
-        }
+//        for (int i = 0; i < tab.length; i++) {
+//            for (int j = 0; j < tab[1].length; j++) {
+//                System.out.print(tab[i][j] + "\t");
+//            }
+//            System.out.println();
+//        }
     }
 
     public static void listDesCoJouablesFct(int[][] tab, int joueur) {
@@ -37,39 +37,39 @@ public class Methode_Main {
             for (int j = 0; j < tab[1].length; j++) {
                 if (joueur == 1) {
                     if (tab[j][i] == 1) {
-                        verifjouable(Menu.tabint, i, j, -1, -1, compteur, 2, CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, -1, -1, compteur, 2, CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 1, -1, compteur, 2, CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 1, -1, compteur, 2, CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, -1, 1, compteur, 2, CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, -1, 1, compteur, 2, CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 1, 1, compteur, 2, CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 1, 1, compteur, 2, CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, -1, 0, compteur, 2, CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, -1, 0, compteur, 2, CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 1, 0, compteur, 2, CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 1, 0, compteur, 2, CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 0, -1, compteur, 2,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 0, -1, compteur, 2,  CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 0, 1, compteur, 2,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 0, 1, compteur, 2,  CoDepX, CoDepY);
                     }
                 } else {
                     if (tab[j][i] == 2) {
-                        verifjouable(Menu.tabint, i, j, -1, -1, compteur, 1,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, -1, -1, compteur, 1,  CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 1, -1, compteur, 1,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 1, -1, compteur, 1,  CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, -1, 1, compteur, 1,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, -1, 1, compteur, 1,  CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 1, 1, compteur, 1,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 1, 1, compteur, 1,  CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, -1, 0, compteur, 1,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, -1, 0, compteur, 1,  CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 1, 0, compteur, 1,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 1, 0, compteur, 1,  CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 0, -1, compteur, 1,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 0, -1, compteur, 1,  CoDepX, CoDepY);
 
-                        verifjouable(Menu.tabint, i, j, 0, 1, compteur, 1,  CoDepX, CoDepY);
+                        verifjouable(Plateau.tabint, i, j, 0, 1, compteur, 1,  CoDepX, CoDepY);
                     }
                 }
             }
