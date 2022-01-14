@@ -5,7 +5,7 @@ public class Game {
 
     public static boolean playGame= true ;
     public static boolean rejouer  = true ;
-    public static void myGame( boolean ia ) throws InterruptedException {
+    public static void myGame( int ia ) throws InterruptedException {
         Scanner sc = new Scanner(System.in) ;
         Methode_Position.listDesCoJouablesFct(Plateau.tabint,1);
 
@@ -19,32 +19,48 @@ public class Game {
 
 
             rejouer = true ;
-
+            Methode_Position.listDesCoJouablesFct(Plateau.tabint, 1);
             if (canPlay(passCompt) && playGame ){
                 passCompt =  0 ;
-
-                do {
-
+                if(ia != 3 ){
                     do {
-                        System.out.println("c'est au noir de jouer ");
-                        Methode_Position.listDesCoJouablesFct(Plateau.tabint, 1);
-                        Methode_Position.afficherTableau(Plateau.tabint);
 
-                        try {
-                            x = Integer.parseInt(sc.nextLine());
-                            y = Integer.parseInt(sc.nextLine());
-                        } catch (Exception E) {
-                            System.out.println("il faut ecrire des coordoner ");
-                            x = -1;
-                            y = -1;
-                        }
+                        do {
+                            System.out.println("c'est au noir de jouer ");
+                            Methode_Position.listDesCoJouablesFct(Plateau.tabint, 1);
+                            Methode_Position.afficherTableau(Plateau.tabint);
 
-                    } while (x < 1 || x > 8 || y < 1 || y > 8);
+                            try {
+                                x = Integer.parseInt(sc.nextLine());
+                                y = Integer.parseInt(sc.nextLine());
+                            } catch (Exception E) {
+                                System.out.println("il faut ecrire des coordoner ");
+                                x = -1;
+                                y = -1;
+                            }
 
-                    x-- ;
-                    y-- ;
-                    Methode_Jeton.placerJeton( x, y, 1);
-                }while (rejouer) ;
+                        } while (x < 1 || x > 8 || y < 1 || y > 8);
+
+                        x-- ;
+                        y-- ;
+                        Methode_Jeton.placerJeton( x, y, 1);
+                    }while (rejouer) ;
+
+
+
+                }
+                else {
+                    System.out.println("c'est a l'ia ⬡  de jouer");
+                    Methode_Position.listDesCoJouablesFct(Plateau.tabint, 1);
+                    Methode_Position.afficherTableau(Plateau.tabint);
+
+
+
+                    iaPlay(1) ;
+
+
+                }
+
 
             }
 
@@ -55,9 +71,10 @@ public class Game {
 
             rejouer = true;
             //coordoner dans un int
+            Methode_Position.listDesCoJouablesFct(Plateau.tabint, 2);
             if (canPlay(passCompt) && playGame){
                 passCompt = 0 ;
-                if (!ia) {
+                if (ia == 1) {
                     do {
 
                         do {
@@ -84,11 +101,14 @@ public class Game {
                     } while (rejouer);
                 }
                 else {
-                    System.out.println("c'est a l'ia de jouer");
+                    System.out.println("c'est a l'ia ⬢  de jouer");
                     Methode_Position.listDesCoJouablesFct(Plateau.tabint, 2);
                     Methode_Position.afficherTableau(Plateau.tabint);
-                    TimeUnit.SECONDS.sleep(2);
-                    iaPlay() ;
+                    if(ia == 2){
+                        TimeUnit.SECONDS.sleep(2);
+                    }
+
+                    iaPlay(2) ;
                 }
 
             }
@@ -102,10 +122,10 @@ public class Game {
 
     }
 
-    private static void iaPlay() {
+    private static void iaPlay( int valJoueur) {
         int x  = 0;
         int y = 0;
-        int minus  = -1;
+        int minus  = 0;
 
 
         for (int i = 0; i < Plateau.tabint.length; i++) {
@@ -131,7 +151,8 @@ public class Game {
 
 
         }
-        Methode_Jeton.placerJeton(x, y, 2);
+
+        Methode_Jeton.placerJeton(x, y, valJoueur);
 
 
     }
@@ -181,7 +202,7 @@ public class Game {
         Methode_Position.listDesCoJouablesFct(Plateau.tabint, 1);
         Methode_Position.afficherTableau(Plateau.tabint);
 
-        System.out.println("Appuyer surt n'importe quel touche pour continuer ");
+        System.out.println("Appuyer sur n'importe quel touche pour continuer ");
         int wait ;
         try {
             wait = Integer.parseInt(sc.nextLine()) ;
@@ -198,6 +219,7 @@ public class Game {
     }
     private static boolean canPlay(int pass) {
         if (pass >= 2){
+
             playGame = false ;
             System.out.println("personne ne peut jouer fin de partie ");
         }
@@ -207,6 +229,7 @@ public class Game {
             for (int j = 0; j < Plateau.tabint.length; j++) {
 
                 if (Plateau.tabint[i][j] < 0 ){
+
                     return true ;
                 }
 
