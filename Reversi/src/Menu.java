@@ -7,7 +7,7 @@ public class Menu {
 
         int ia ;
         Scanner sc = new Scanner(System.in) ;
-        System.out.println(" Voulez vous jouer contre un joueur ou contre l'ia ? \n 1. joueur \n 2. ia ");
+        System.out.println(" Voulez vous jouer contre un joueur ou contre l'ia ? \n 1. joueur \n 2. ia \n 3. Quitter ");
         do {
             try{
                 ia = Integer.parseInt(sc.nextLine()) ;
