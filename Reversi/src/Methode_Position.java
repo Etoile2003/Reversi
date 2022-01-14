@@ -20,12 +20,12 @@ public class Methode_Position {
         }
 
 
-        for (int i = 0; i < tab.length; i++) {
-            for (int j = 0; j < tab[1].length; j++) {
-                System.out.print(tab[i][j] + "\t");
-            }
-            System.out.println();
-        }
+//        for (int i = 0; i < tab.length; i++) {
+//            for (int j = 0; j < tab[1].length; j++) {
+//                System.out.print(tab[i][j] + "\t");
+//            }
+//            System.out.println();
+//        }
     }
 
     public static void listDesCoJouablesFct(int[][] tab, int joueur) {
